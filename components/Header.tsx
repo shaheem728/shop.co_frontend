@@ -64,7 +64,7 @@ const Header = () => {
       )}
 
       <div className="max-w-screen-xl flex flex-wrap space-x-5 gap-16 lg:gap-5 justify-between  p-4">
-        <div className="flex items-center">
+        <div className="flex items-center ms-10">
           <button
             type="button"
             className="inline-flex items-center  w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:text-gray-400"
@@ -90,7 +90,7 @@ const Header = () => {
             </svg>
           </button>
           <Link href="/" className="flex items-center space-x-3">
-            <span className="self-center text-2xl font-bold whitespace-nowrap  text-black">
+            <span className="self-center text-3xl font-extrabold  whitespace-nowrap  text-black">
               SHOP.CO
             </span>
           </Link>
