@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex mb-20 flex-col fixed w-full z-10 justify-between bg-white border-b-2">
+    <nav className="flex mb-20 px-5 flex-col fixed w-full z-10 justify-between bg-white border-b-2">
       {user == false && (
         <div
           id="signup-reminder"
@@ -64,7 +64,7 @@ const Header = () => {
       )}
 
       <div className="max-w-screen-xl flex flex-wrap space-x-5 gap-16 lg:gap-5 justify-between  p-4">
-        <div className="flex items-center ms-10">
+        <div className="flex items-center">
           <button
             type="button"
             className="inline-flex items-center  w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:text-gray-400"
