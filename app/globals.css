@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+}
+/* loading */
+.loader div{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: animate 1.5s ease-in-out infinite;
+  display: inline-block;
+  margin: .5rem;
+}
+.loader div:nth-child(0){
+  animation-delay: 0s;
+}
+.loader div:nth-child(1){
+  animation-delay: 0.2s;
+}
+.loader div:nth-child(2){
+  animation-delay: 0.4s;
+}
+.loader div:nth-child(3){
+  animation-delay: 0.6s;
+}
+.loader div:nth-child(4){
+  animation-delay: 0.8s;
+}
+.loader div:nth-child(5){
+  animation-delay: 1s;
+}
+.loader div:nth-child(6){
+  animation-delay: 1.2s;
+}
+.loader div:nth-child(7){
+  animation-delay: 1.4s;
+}
+@keyframes animate{
+  0%,100% {
+      transform: scale(0.1);
+      background-color: black;
+  } 
+  40%{
+      transform: scale(1);
+      background-color: rgb(149, 149, 149);
+  }
+  50%{
+      transform: scale(1);
+      background-color: black;
+  }   
+}
+@layer components {
+  .auth-section {
+    @apply px-2 md:px-32 flex flex-col items-center mt-28 my-7 justify-center bg-gray-50;
+  }
+  .auth-container {
+    @apply w-full  max-w-sm border rounded-2xl px-6 py-8 bg-white shadow-lg;
+  }
+
+
+  .auth-heading {
+    @apply font-extrabold text-3xl text-center mb-4;
+  }
+
+  .alert-message {
+    @apply flex ms-auto p-2 text-sm border rounded-lg;
+  }
+
+  .alert-success {
+    @apply text-green-800 border-green-400 bg-green-100 ;
+  }
+
+  .alert-error {
+    @apply text-red-800 border-red-400 bg-red-100;
+  }
+  .form-info{
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+  }
+  .form-group {
+    @apply flex flex-col space-y-6;
+  }
+
+  .form-label {
+    @apply text-sm font-semibold text-gray-600 mb-2;
+  }
+
+  .form-input {
+    @apply border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary;
+  }
+
+  .btn-primary {
+    @apply w-full text-lg font-bold py-3 rounded-full transition;
+  }
+
+  .auth-link {
+    @apply text-center text-sm text-gray-500 mt-4;
+  }
+  .dashboard-button {
+    @apply flex items-center p-1 text-gray-900 rounded-lg  hover:bg-gray-100 ;
+  }
+  .dashboard-icon{
+    @apply flex-shrink-0 w-6 h-6 text-gray-500  transition duration-700 ease-in-out ;
+  }
+  .dashboard-sidebar {
+    @apply h-96 w-52 hidden md:block px-8 border-gray-400 shadow-2xl mx-3;
+  }
+  .dashboard-link {
+    @apply flex items-center p-1 text-gray-900 rounded-lg  hover:bg-gray-100 ;
+  }
+  .logout-icon {
+    @apply flex flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75;
+  }
+  .nav-list{
+    @apply space-y-2 font-medium border-t border-gray-200 
+  }
+  .dashboard-content {
+    @apply h-[600px] w-full p-10 h-full shadow-2xl;
+  }
+  .discount-content{
+    @apply bg-red-100 w-16 h-8 mt-1 text-red-600 text-sm rounded-full flex items-center justify-center;
+  }
+  .banner-section{
+    @apply flex flex-col items-center sm:items-start border-r border-gray-300 pr-0 sm:pr-5
+  }
+  .banner-section-no{
+    @apply text-black text-2xl sm:text-4xl font-bold
+  }
+  .banner-section-text{
+    @apply text-sm sm:text-base text-gray-500
+  }
+  .header-nav{
+    @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-500 md:p-0
+  }
+  .footer{
+    @apply absolute z-10 flex flex-col lg:flex-row bg-black lg:justify-between  items-center py-10 px-28 lg:py-5 lg:px-20 rounded-2xl mx-5 md:mx-20  
+  }
+  .footer-text{
+    @apply text-base mb-5 font-medium
+  }
+  .footer-Subtext{
+    @apply text-base mb-3 font-normal text-gray-500
+  }
+  .footer-paymethod{
+    @apply bg-white rounded border border-gray-300 flex justify-center items-center p-2
+  }
+  .footer-medias{
+    @apply bg-white rounded-full border border-gray-300 flex justify-center items-center p-2
+  }
+  .order-flex{
+    @apply flex justify-between my-2
+  }
+  .order-h{
+    @apply font-normal text-gray-500 text-xl
+  }
+  .range-input{
+    @apply absolute w-full h-2 bg-transparent appearance-none cursor-pointer pointer-events-auto
+  }
+  .form-shipping{
+   @apply border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary
+  }
+  .form-ship-label{
+   @apply text-sm font-semibold text-gray-600 mb-2
+  }
+  .form-profile{
+    @apply text-sm font-semibold text-gray-600 mb-2
+  }
+  .detail-list{
+    @apply flex flex-wrap justify-around text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 
+  }
+}
+/* Custom utilities */
+@layer utilities {
+  .btn-submit {
+    @apply bg-black text-white hover:bg-gray-800;
+  }
+  .btn-reset{
+      @apply  text-white w-56 my-3 mx-3 bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 
+  }
+  .btn-size{
+   @apply rounded-full bg-secondary hover:bg-black hover:text-white text-gray-400 h-11 w-auto me-1 place-content-center px-5 
+  }
+  .btn-quantity{
+   @apply px-4 py-2 text-sm font-medium text-gray-900 bg-transparent  border-gray-900  hover:bg-gray-900 hover:text-white 
+  }
+  .btn-paggination{
+   @apply flex items-center justify-start px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 
+  }
+  
+  .btn-addTocart{
+   @apply text-white w-[100%] mt-2 bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 me-1 mb-2
+  }
+  .btn-filter{
+    @apply  flex items-center justify-between w-full p-5 font-medium rtl:text-right text-black  gap-3
+  }
+  .btn-Removefilter{
+    @apply  text-white  my-3 mx-3 bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 
+  }
+  .btn-next{
+    @apply bg-black flex justify-center items-center  rounded-full text-white py-4 px-14 my-2
+  }
+  .btn-dropdown{
+    @apply flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border  focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3
+  }
+  .link-hover {
+    @apply text-gray-500 hover:text-blue-500 font-medium hover:underline;
+  }
+  .link-views{
+    @apply border bg-white text-black hover:bg-black hover:text-white text-center py-3 rounded-full w-56 h-12
+  }
+  .btn-profile{
+    @apply text-white w-48  bg-gradient-to-r  hover:bg-gradient-to-br focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2
+  }
+}
