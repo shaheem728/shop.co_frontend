@@ -50,7 +50,7 @@ export default function CartPage() {
     return <Loading/>;
   }
   return (
-    <section className="px-2 md:px-32 flex flex-col  ">
+    <section className="px-2 md:px-32 flex flex-col mt-20 ">
       <h1 className="font-extrabold text-4xl py-3">YOUR CART</h1>
       <div className="flex flex-col  lg:flex-row justify-between gap-3">
         <div className=" px-5 border rounded-2xl  flex flex-col  w-full">
