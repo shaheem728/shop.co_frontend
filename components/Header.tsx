@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex mb-20 px-5 flex-col fixed w-full z-10 justify-between bg-white border-b-2">
+    <nav className="flex mb-20  flex-col fixed w-full z-10 justify-between bg-white border-b-2">
       {user == false && (
         <div
           id="signup-reminder"
@@ -63,7 +63,7 @@ const Header = () => {
         </div>
       )}
 
-      <div className="max-w-screen-xl flex flex-wrap space-x-5 gap-16 lg:gap-5 justify-between  p-4">
+      <div className="max-w-screen-xl flex flex-wrap lg:gap-5 justify-between  p-4">
         <div className="flex items-center">
           <button
             type="button"
@@ -89,7 +89,7 @@ const Header = () => {
               />
             </svg>
           </button>
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center ">
             <span className="self-center text-3xl font-extrabold  whitespace-nowrap  text-black">
               SHOP.CO
             </span>
@@ -140,7 +140,7 @@ const Header = () => {
           </div>
         </div>
         <div className="lg:flex items-center hidden">
-          <ul className="flex mx-5 font-medium p-4 md:p-0 mt-3 md:space-x-10  md:flex-row md:mt-0 md:border-0 md:bg-white ">
+          <ul className="flex  font-medium p-4 md:p-0 mt-3 md:space-x-10  md:flex-row md:mt-0 md:border-0 md:bg-white ">
             {nav.map((nav, index) => {
               return (
                 <li key={index}>

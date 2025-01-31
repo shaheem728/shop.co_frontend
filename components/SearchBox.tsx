@@ -13,8 +13,7 @@ const SearchBox =()=> {
     setQuery('')
   };
   return (
-    <>
-      <div className="flex">
+      <div className="flex mx-2">
         <form onSubmit={handleSearch}>
           <div className="relative  w-96">
             <button type="submit" className="absolute top-0 start-0 p-2.5 text-sm font-medium h-full text-gray-500  rounded-s-full border  hover:bg-black border-none ">
@@ -35,7 +34,6 @@ const SearchBox =()=> {
           </div>
         </form>
       </div>
-    </>
   );
 }
 export default dynamic(() => Promise.resolve(SearchBox), { ssr: false });

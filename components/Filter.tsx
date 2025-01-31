@@ -99,7 +99,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
     ]; 
     
     return (
-        <form className=" lg:border  lg:rounded-xl h-auto">
+        <section className="lg:border  lg:rounded-xl h-auto bg-white">
         <div className="flex my-3 justify-between px-4">
           <h1 className="text-lg font-bold  text-gray-900">Filters</h1>
           <svg
@@ -375,6 +375,6 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
             Remove Filter
           </button>
         </div>
-      </form>
+      </section>
     )
 }
