@@ -4,6 +4,7 @@ const Footer = () => {
   const current_year = new Date().getFullYear()
   return (
       <footer className=" relative  md:h-[80vh] h-[100rem] lg:mt-auto  ">
+        
         <div className="footer lg:-top-50 lg:bottom-96 lg:left-20 lg:right-20">
           <h1 className="text-3xl lg:text-5xl font-bold text-white text-center lg:text-left">
             STAY UP TO DATE ABOUT <br /> OUR LATEST OFFERS
@@ -34,6 +35,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
+
         <div className="absolute bottom-0 bg-secondary py-10 pt-36 px-5 w-full lg:px-20 ">
           <div className="flex flex-col md:flex-row gap-10 md:gap-20 px-6 md:justify-between">
             <div className="flex flex-col justify-between">

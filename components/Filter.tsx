@@ -21,18 +21,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
       setSelectedColor(color);
       onSelectColor(color)
   };
-    const toggleAccordion = () => {
-      setIsOpen(!isOpen);
-    };
-    const toggleAccordion1 = () => {
-      setIsOpen1(!isOpen1);
-    };
-    const toggleAccordion2 = () => {
-      setIsOpen2(!isOpen2);
-    };
-    const toggleAccordion3 = () => {
-      setIsOpen3(!isOpen3);
-    };
+
     const subCategories = [  
         { name: "T-Shirts" },
         { name: "Shorts" },
@@ -151,7 +140,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
               className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-black  gap-3"
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded={isOpen}
-              onClick={toggleAccordion}
+              onClick={()=>setIsOpen((isOpen)=>!isOpen)}
               aria-controls="accordion-collapse-body-1"
             >
               <h1 className="text-lg font-bold  text-gray-900">
@@ -197,7 +186,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
               className="btn-filter"
               data-accordion-target="#accordion-collapse-body-2"
               aria-expanded={isOpen1}
-              onClick={toggleAccordion1}
+              onClick={()=>setIsOpen1((isOpen1)=>!isOpen1)}
               aria-controls="accordion-collapse-body-2"
             >
               <h1 className="text-lg font-bold  text-gray-900">
@@ -258,7 +247,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
               className="btn-filter"
               data-accordion-target="#accordion-collapse-body-3"
               aria-expanded={isOpen2}
-              onClick={toggleAccordion2}
+              onClick={()=>setIsOpen2((isOpen2)=>!isOpen2)}
               aria-controls="accordion-collapse-body-3"
             >
               <h1 className="text-lg font-bold  text-gray-900">Size</h1>
@@ -306,7 +295,7 @@ export default function Filter({handleChanges,onSelectSize,onSelectColor,onSelec
               className="btn-filter"
               data-accordion-target="#accordion-collapse-body-4"
               aria-expanded={isOpen3}
-              onClick={toggleAccordion3}
+              onClick={()=>setIsOpen3((isOpen3)=>!isOpen3)}
               aria-controls="accordion-collapse-body-4"
             >
               <h1 className="text-lg font-bold  text-gray-900">
