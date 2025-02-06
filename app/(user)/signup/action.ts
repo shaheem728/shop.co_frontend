@@ -34,8 +34,8 @@ export async function signup(state: FormState,formData: FormData) {
     password: formData.get("password") as string,
     profile: {
       mobile: formData.get("mobile") as string,
-      address: "",
-      order_mobile: "",
+      address:"",
+      order_mobile:"",
     },
   };
 
