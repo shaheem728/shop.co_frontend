@@ -60,8 +60,6 @@ export default function OrderSummary({ handleStep, handlePrevious }:PageProps) {
         handlepayment();
       }
       if (!response.ok) {
-        const errorData = await response.json();
-        setErrorMsg(errorData);
         isTokenExpired();
         return;
       }
