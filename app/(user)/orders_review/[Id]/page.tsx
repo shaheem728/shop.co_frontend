@@ -95,7 +95,7 @@ export default function Page({ params }: { params: Promise<{ Id: string }> }) {
     }
   }
   return (
-    <div className="flex h-full mt-16">
+    <div className="flex  my-20">
       <section className="m-auto items-center mt-2 justify-center bg-gray-50">
         <div className=" w-[75vw]  border rounded-2xl px-3 py-2 bg-white shadow-lg">
           <div className="flex justify-between w-auto  h-auto  px-6 py-8 bg-white shadow-md ">
