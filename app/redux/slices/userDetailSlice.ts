@@ -2,21 +2,23 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {getAuthTokens ,isTokenExpired} from '@/utils/actions/auth'
 import {API_URL} from '@/components/config'
 export interface UserDetail {
+    username?: string;
     email: string;
-    first_name:string;
-    last_name:string;
+    first_name?:string;
+    last_name?:string;
+    password?:string;
     profile: { 
         mobile?:string;
         address: string;
         order_mobile:string;
     };
 }
-interface userDetailState {
+export interface userDetailState {
     userInfo : UserDetail | null;
     status: 'idle' | 'loading' |'succeeded' | 'failed';
     error: string | null;
 }
-const initialState: userDetailState = {
+export const initialState: userDetailState = {
     userInfo: null,
     status: 'idle',
     error:null,
@@ -63,3 +65,4 @@ const userDetailSlice = createSlice({
     }
 });
 export const userDetailReducer = userDetailSlice.reducer;
+

@@ -10,7 +10,7 @@ const store = configureStore({
     cart:cartReducer,
     userDetail:userDetailReducer,
     shipping:shippingReducer,
-    order:orderReducer
+    order:orderReducer,
   },
 });
 export type AppDispatch = typeof store.dispatch;

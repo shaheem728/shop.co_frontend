@@ -1,17 +1,6 @@
 import { SignupFormSchema,FormState } from './definition';
 import { API_URL } from '@/components/config';
-
-interface User {
-  username: string;
-  email: string;
-  password: string;
-  profile: {
-    mobile: string;
-    address: string;
-    order_mobile:string;
-  };
-}
-
+import { UserDetail } from "@/app/redux/slices/userDetailSlice";
 export async function signup(state: FormState,formData: FormData) {
   // Validate form fields
   const validatedFields = SignupFormSchema.safeParse({
@@ -28,14 +17,14 @@ export async function signup(state: FormState,formData: FormData) {
     };
   }
 
-  const userData: User = {
+  const userData:UserDetail = {
     username: formData.get("name") as string,
     email: formData.get("email") as string,
     password: formData.get("password") as string,
     profile: {
       mobile: formData.get("mobile") as string,
-      address: "",
-      order_mobile: "",
+      address:"",
+      order_mobile:"",
     },
   };
 
@@ -52,13 +41,13 @@ export async function signup(state: FormState,formData: FormData) {
     } else {
       const data = await response.json();
       if(data.username[0]) {
-        return { errors: data.username[0] }
+        return { error: data.username[0] }
       }else{
-        return { errors: "user all ready exists" }
+        return { error: "user all ready exists" }
       }
     }
   } catch (error) {
     if (error instanceof Error) {
-      return { errors: "An unknown error occurred." } };
+      return { error: "An unknown error occurred." } };
     }
 }
