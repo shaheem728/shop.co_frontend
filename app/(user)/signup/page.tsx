@@ -1,19 +1,35 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { signup } from "./action";
-import {useActionState } from "react";
+import { useActionState } from "react";
+
 export default function SignupForm() {
   const [state, action, pending] = useActionState(signup, undefined);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    password: "",
+  });
+
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <section className="auth-section">
       <div className="auth-container">
-        <h1 className="auth-heading ">SIGN UP</h1>
-        {
-          state?.error&& (
-            <div
-            className="alert-message alert-error"
-            role="alert"
-          >
+        <h1 className="auth-heading">SIGN UP</h1>
+        {state?.error && (
+          <div className="alert-message alert-error" role="alert">
             <svg
               className="flex-shrink-0 inline w-4 h-4 me-3"
               aria-hidden="true"
@@ -28,9 +44,7 @@ export default function SignupForm() {
               <span className="font-medium">{state.error}</span>
             </div>
           </div>
-            
-          )
-        }
+        )}
         <form className="space-y-6" action={action}>
           <div className="flex flex-col">
             <label
@@ -44,6 +58,8 @@ export default function SignupForm() {
               id="name"
               name="name"
               placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
               className="form-input"
               required
             />
@@ -56,32 +72,36 @@ export default function SignupForm() {
               htmlFor="email"
               className="text-sm font-semibold text-gray-600 mb-2"
             >
-              email
+              Email
             </label>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
               className="form-input"
               required
             />
           </div>
           {state?.errors?.email?.map((error: string, index: number) => (
-          <p key={index} className="text-red-600">{error}</p>
-            ))}
+            <p key={index} className="text-red-600">{error}</p>
+          ))}
           <div className="flex flex-col">
             <label
               htmlFor="mobile"
-              className="form-label "
+              className="form-label"
             >
-              mobile
+              Mobile
             </label>
             <input
               type="text"
               id="mobile"
               name="mobile"
               placeholder="Mobile Number"
+              value={formData.mobile}
+              onChange={handleChange}
               className="form-input"
               required
             />
@@ -92,29 +112,31 @@ export default function SignupForm() {
           <div className="flex flex-col">
             <label
               htmlFor="password"
-              className="form-label "
+              className="form-label"
             >
-              password
+              Password
             </label>
             <input
               type="password"
               id="password"
               name="password"
               placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleChange}
               className="form-input"
               required
             />
           </div>
           {state?.errors?.password && (
-          <div>
-            <p>Password must:</p>
-            <ul>
-              {state.errors.password.map((error: string, index: number) => (
-                <li key={index} className="text-red-600">- {error}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+            <div>
+              <p>Password must:</p>
+              <ul>
+                {state.errors.password.map((error: string, index: number) => (
+                  <li key={index} className="text-red-600">- {error}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           <button
             type="submit"
             disabled={pending}

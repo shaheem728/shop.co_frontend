@@ -49,7 +49,10 @@ export default function PersonalInfo({ handleStep, isStep }: PageProps) {
     const token = await getAuthTokens();
     setToken(token.access_token);
   }
-  async function handleForm(formData: FormData) {
+  async function handleForm(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
     const userData: UserDetail = {
       email: formData.get("email")?.toString() || userInfo?.email || "",
       first_name:
@@ -58,13 +61,10 @@ export default function PersonalInfo({ handleStep, isStep }: PageProps) {
         formData.get("last_name")?.toString() || userInfo?.last_name || "",
       profile: {
         address:
-          formData.get("address")?.toString() ||
-          userInfo?.profile.address ||
-          "",
+          formData.get("address")?.toString() || userInfo?.profile.address || "",
         order_mobile:
           formData.get("phone")?.toString() ||
           userInfo?.profile.order_mobile ||
-          userInfo?.profile.mobile ||
           "",
       },
     };
@@ -232,7 +232,7 @@ export default function PersonalInfo({ handleStep, isStep }: PageProps) {
                 </svg>
               </button>
             )}
-            <form action={handleForm}>
+            <form onSubmit={handleForm}>
               <div className="grid gap-6 mb-6 md:grid-cols-2 ">
                 <div>
                   <label
