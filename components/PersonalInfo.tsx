@@ -278,7 +278,7 @@ export default function PersonalInfo({ handleStep, isStep }: PageProps) {
                     id="phone"
                     name="phone"
                     className="form-info"
-                    placeholder={
+                    defaultValue={
                       (userInfo && userInfo?.profile.order_mobile) ||
                       (userInfo && userInfo?.profile.mobile) ||
                       ""
