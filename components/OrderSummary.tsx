@@ -55,7 +55,6 @@ export default function OrderSummary({ handleStep, handlePrevious }:PageProps) {
         body: JSON.stringify(payload),
       });
       const data = await response.json();
-      console.log("respons=",data)
       if(response){
         localStorage.setItem("orderId",data.uuid)
         handlepayment();
@@ -87,13 +86,13 @@ export default function OrderSummary({ handleStep, handlePrevious }:PageProps) {
       });
       if (!response.ok) {
         const errorData = await response.json();
-        setErrorMsg(errorData);
         isTokenExpired();
         console.log("API Error:", errorData);
         return;
       }
   
       const data = await response.json();
+      console.log("data=",data)
       if (data.checkout_session) {
         window.location.href = `${data.checkout_session}`;
       } else {

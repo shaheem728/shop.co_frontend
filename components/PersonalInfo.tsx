@@ -320,14 +320,14 @@ export default function PersonalInfo({ handleStep, isStep }: PageProps) {
               <div className="flex  justify-self-center my-5 ">
                 <button
                   type="submit"
-                  className="btn-profile from-cyan-400 via-cyan-500 to-cyan-600  focus:ring-cyan-300 "
+                  className="btn-profile blue-btn"
                   hidden={!isenable}
                 >
                   Submit
                 </button>
                 <button
                   type="reset"
-                  className="btn-profile from-red-400 via-red-500 to-red-600  focus:ring-red-300  "
+                  className="btn-profile red-btn"
                   hidden={!isenable}
                   onClick={() => {
                     setEnable(false);

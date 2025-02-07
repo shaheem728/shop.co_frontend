@@ -100,25 +100,23 @@ export default function Page({ params }: { params: Promise<{ Id: string }> }) {
         <div className=" w-[75vw]  border rounded-2xl px-3 py-2 bg-white shadow-lg">
           <div className="flex justify-between w-auto  h-auto  px-6 py-8 bg-white shadow-md ">
             {errorMsg && (
-              <div
-                className="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 "
-                role="alert"
-              >
-                <svg
-                  className="flex-shrink-0 inline w-4 h-4 me-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                </svg>
-                <span className="sr-only">Info</span>
-                <div>
-                  <span className="font-medium">{errorMsg}</span> Change a few
-                  things up and try submitting again.
-                </div>
-              </div>
+                        <div className="alert-message alert-error" role="alert">
+                        <svg
+                          className="flex-shrink-0 inline w-4 h-4 me-3"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span className="sr-only">Info</span>
+                        <div className="text-sm">
+                          <span className="font-medium">{errorMsg}</span>Change a few
+                          things up and try submitting again
+                        </div>
+                      </div>
+
             )}
             <div>
               <h1 className="font-extrabold text-2xl  mb-6">Rating & Review</h1>
@@ -188,13 +186,13 @@ export default function Page({ params }: { params: Promise<{ Id: string }> }) {
               <div className="flex  justify-self-center my-5 ">
                 <button
                   type="submit"
-                  className="text-white w-48  bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  className="btn-profile blue-btn"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="text-white w-48  bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  className="btn-profile red-btn"
                   onClick={() => router.back()}
                 >
                   Cancel
